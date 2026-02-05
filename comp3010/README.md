@@ -27,3 +27,16 @@ Incident handling follows **NIST SP 800-61r2** lifecycle:
 - **Post-Incident** — Lessons: enforce MFA, least privilege, automated S3 scanning.
 
 BOTSv3 highlights gaps: accidental insider misconfigs (human error) evade prevention; detection relies on log visibility; response delayed without proactive alerts. Reflection: Modern SOCs need SOAR for automation and threat hunting to shift left.
+
+**Steps:**
+
+1. Download Splunk Enterprise (free trial) from splunk.com.
+2. Install via `.deb` package: `sudo dpkg -i splunk-*.deb`.
+3. Start Splunk: `sudo /opt/splunk/bin/splunk start --accept-license`.
+4. Access UI: http://<VM-IP>:8000 (default admin/changeme).
+5. Download BOTSv3 dataset: https://github.com/splunk/botsv3 → botsv3_data_set.tgz (~320MB pre-indexed).
+6. Ingest: Extract tgz → copy `.spl` files to `/opt/splunk/etc/apps/` or use "Add Data" → monitor directory.
+7. Validate: Search `index=botsv3 | stats count by sourcetype` → confirms 100+ sourcetypes (aws:cloudtrail, aws:s3:accesslogs, winhostmon, etc.).
+8. Time range: Set to All Time or `earliest=0` for full coverage.
+
+**Justification:** Ubuntu VM mimics lightweight SOC forwarder/standalone; pre-indexed format speeds analysis (no parsing overhead); local setup ensures data sovereignty/privacy. In production SOC, use distributed Splunk (indexers + search heads) with heavy forwarders for scalability.
