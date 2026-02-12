@@ -78,11 +78,11 @@ From BOTSv3 I learned important lessons:
 
 Many security problems start because normal employees make mistakes (like forgetting to secure a bucket). 
 
-If logs are missing or hard to search, it takes much longer to find the truth. 
+If logs are missing or hard to search, it takes much longer to find the fact. 
 
-Companies should use automatic tools (called SOAR) to react faster and reduce human work. 
+Companies should use automatic tools (such as SOAR) to react faster and reduce human work. 
 
-Prevention is better than reaction — strong rules like “force MFA” and “never allow public buckets” can stop most accidents. 
+Prevention is better than reaction — strong rules like force MFA and never allow public buckets can stop most accidents. 
 
 3. How I Installed Splunk and Added the Data 
 
@@ -118,7 +118,7 @@ Still gives full access to all BOTSv3 data and Splunk features.
 
 In a real small team or student lab, many people use Windows for simplicity. 
 
-Screenshots I added: 
+Screenshots: 
 
 Splunk welcome screen after login 
 
@@ -142,11 +142,23 @@ Search used: index=botsv3 sourcetype=aws:cloudtrail | stats count by userIdentit
 
  
 
+ 
+
+Pay attention to userName 
+
+ 
+
 Why it matters: In a real company, SOC must watch who is using cloud accounts. Strange users or too many actions can be signs of hacking. 
 
 Question 2: Which field shows if someone did NOT use MFA? 
 
 Answer: userIdentity.sessionContext.attributes.mfaAuthenticated 
+
+ 
+
+ 
+
+Pay attention at mfaAuthenticated 
 
  
 
@@ -174,6 +186,8 @@ Answer: ab45689d-69cd-41e7-8705-5350402cf7ac
 
  
 
+Pay attention at /AllUsers 
+
 Why it matters: This ID proves exactly when and how the security mistake happened. 
 
 Question 5: What is Bud’s username? 
@@ -189,6 +203,10 @@ Question 6: What is the name of the public S3 bucket?
 Answer: frothlywebcode 
 
  
+
+ 
+
+Pay attention at bucketName 
 
 Why it matters: Knowing the exact bucket name helps understand how much data was at risk. 
 
@@ -208,7 +226,7 @@ Answer: bstoll-l.froth.ly
 
  
 
- 
+Pay attention at OS=”Microsoft Windows 10 Enterprise” 
 
 Other hosts using Microsoft Windows 10 Pro, but host: BSTOLL-L is uniquely using Microsoft Windows 10  Enterprise version. 
 
@@ -253,7 +271,5 @@ Extra files:
 Screenshots folder with pictures from Splunk  
 
 Video showing live searches and explanations 
-
-Thank you for reading! 
 
  
