@@ -1,6 +1,6 @@
 BOTSv3 Security Report: Frothly Brewing Company Attack Investigation 
 
-Your Name: Tang Pak Chun 
+Name: Tang Pak Chun 
 
 Date: February 2025 
 
