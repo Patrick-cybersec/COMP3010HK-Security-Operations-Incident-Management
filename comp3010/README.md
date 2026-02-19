@@ -6,7 +6,7 @@ Date: February 2025
 
 GitHub Link: https://github.com/Patrick-cybersec/COMP3010HK-Security-Operations-Incident-Management/edit/main/comp3010/README.md 
 
-Video Presentation: [put YouTube link here] – short video (5–10 minutes) showing Splunk searches, screenshots, and main lessons 
+Video Presentation: https://www.youtube.com/watch?v=cexqLYRQPZM 
 
 1. Introduction 
 
@@ -271,5 +271,17 @@ Extra files:
 Screenshots folder with pictures from Splunk  
 
 Video showing live searches and explanations 
+
+ 
+
+Gernerative AI Declaration 
+
+I applied AI when i: 
+
+-Tell my answer to ai and let it generates a report with professional and neatly format. 
+
+-troubleshoot at finding the answer of question8. I asked ai and know that the operating system field is shown as “operatingsystem” at splunk and computer name as “computername”. 
+
+-ask ai to check if i am missing component of submitting the coursework. 
 
  
